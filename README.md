@@ -2,4 +2,4 @@
 
 I AM LANCE! GREETINGS WEB SURFERS!!!
 
-https://lancescho.github.io/Brinkley_Game/Brinkley
+https://lancescho.github.io/Brinkley_Game/Brinkley.html
