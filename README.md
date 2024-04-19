@@ -1,5 +1,5 @@
-# Belenski_Game
+# Brinkley Game
 
 I AM LANCE! GREETINGS WEB SURFERS!!!
 
-https://lancescho.github.io/Belenski_Game/Belinsky.html
+https://lancescho.github.io/Brinkley_Game/Brinkley
