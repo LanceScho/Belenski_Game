@@ -1,0 +1,262 @@
+:: StoryTitle
+Brinkley
+
+
+:: StoryData
+{
+  "ifid": "99E9B8CA-0CE3-419A-B9D6-C91E5B96B815",
+  "format": "Harlowe",
+  "format-version": "3.3.8",
+  "start": "how to play",
+  "zoom": 1
+}
+
+
+:: \ won {"position":"1200,400","size":"100,100"}
+(text-style:"smear","rumble")[NOOOOOOOO!!! MY ONE WEAKNESS!!!]
+
+Your did it Brinkley! You won!!!
+*Obtained God's throne!*
+
+
+:: Farm {"position":"1025,350","size":"100,100"}
+''AGE: 70(set: $age to 70)''
+'' MONEY: $money''
+
+You lived a boring life.
+You win depending on how much you like farming.
+
+[[results->gameover]]
+
+
+:: Farm2 {"position":"525,750","size":"100,100"}
+(set: $age to 80)''AGE: 80''
+'' MONEY: $money''
+
+You lived a boring life. 
+BUT you discovered how to live to 80!
+You win depending on how much you like farming.(set: $maxAge to 80)
+
+[[results->gameover]]
+
+
+:: Study them {"position":"900,500","size":"100,100"}
+''AGE: $age''
+'' MONEY: $$money''
+
+You don't have time for that Brinkley!
+
+[[Get goat balls->get goat balls]] 
+
+
+:: advertise {"position":"825,875","size":"100,100"}
+(set: $age to $age + 2)''AGE: $age''
+(set: $money to $money + 50)'' MONEY: $$money''
+(if:$age is >= 70)[Your  time is up Belensky.
+	[[Results->gameover]]](else:)[
+    (text-colour:blue)[It took 2 years but you bought a radio tower to reach more people!]
+    *Obtained $50 from goat surgeries!*
+    What's next dude?
+    
+    [[Keep curent buisness model->advertise]]
+    [[Grow empire->bigger tower]]
+    ]
+
+
+:: balls {"position":"700,500","size":"100,100"}
+''AGE: $age''
+'' MONEY: $$money''
+
+Well what do ya know? These babies might be the cure to all male insecurities!
+What do you do with them?
+
+[[Study them]]
+[[Get goat balls->get goat balls]]
+
+
+:: banned {"position":"825,1125","size":"100,100"}
+''AGE: $age''
+'' MONEY: $$money''
+(if:$age is >= 70)[Your  time is up Belensky.
+	[[Results->gameover]]](else:)[
+    (text-colour:red)[(align:"=><=")+(box:"X=")[THE U.S GOVERNMENT TOOK AWAY YOUR RADIO LICENSEE IN KANSAS DUE TO "MALPRACTICE"]]
+    Oh snap! What are you gonna do about that man?
+    
+    [[Keep going->keep going]]
+    [[Give up->gameover]]
+    ]
+
+
+:: bigger tower {"position":"825,1000","size":"100,100"}
+(set: $age to $age + 5)''AGE: $age''
+(set: $money to $money + 200)'' MONEY: $$money''
+(if:$age is >= 70)[Your  time is up Belensky.
+	[[Results->gameover]]](else:)[
+    (text-colour:orange)[You bought a radio tower in Mexico!]
+    *Obtained $200 from goat surgeries!*
+    You are probably set for life man!
+    
+    [[Keep doing this->bigger tower]] 
+    [[Grow empire->banned]]
+    ]
+
+
+:: dude {"position":"700,625","size":"100,100"}
+''AGE: $age''
+'' MONEY: $$money''
+
+You need a medical degree to do that man.
+
+[[Work hard and earn a medical degree->work hard]]
+[[Purchase medical degree->purchase]]
+
+
+:: fight god {"position":"1250,275","size":"100,100"}
+(text-style: "smear")[Wait what?
+Bro you got nothing to fight me with.]
+
+(if: $goatBalls > 0)[[[Wrong! (Use goat balls)-> won]]]
+[[True... I have no more goat balls... ->start]]
+
+
+:: gameover {"position":"1000,100","size":"100,100"}
+(text-style: "smear")[Welcome to the after life Brinkley.]
+You lived to age $age
+And made $$money
+
+(text-style: "smear")[Good job.]
+(if:$money > 1000000)[(text-color: "red")[[[Challenge God->fight god]]]]
+[[Try again->start]] 
+
+
+:: get goat balls {"position":"450,525","size":"100,100"}
+''AGE: $age''
+'' MONEY: $$money''
+(set: $goatBalls to $goatBalls + 2)
+Obtained $goatBalls Goat Balls!
+What's next man?
+
+[[Put them in a dude->dude]]
+[[Get more Goat Balls->get goat balls]]
+[[I changed my mind, I wanna be a farmer->Farm2]]
+
+
+
+:: how to play {"position":"600,100","size":"100,100"}
+(set: $maxAge to 70)Welcome to Brinkley Game.
+
+Your goal is to make as much money as possible before you die at around **70** years old! Good luck.
+
+[[Play->start]]
+
+
+:: improve radio tower {"position":"825,1375","size":"100,100"}
+(set: $age to $age + 2)''AGE: $age''
+(set: $money to $money + 2000)'' MONEY: $$money''
+(if:$age is >= $maxAge)[Your  time is up Brinkley.
+	[[Results->gameover]]](else:)[
+    (text-style:"buoy")[2 YEARS LATER...]
+    *Obtained $2,000 from goat surgeries*
+    You can improve your radio tower in Mexico for $2000!
+    (if:$money >= 2000)[
+    [[Improve radio tower->improve radio tower again]]]
+    [[Keep going->improve radio tower]]
+    ]
+    
+    
+
+
+:: improve radio tower again {"position":"825,1500","size":"100,100"}
+(set: $age to $age + 3)''AGE: $age''
+(set: $money to $money + 50000)'' MONEY: $$money''
+(if:$age is >= $maxAge)[Your  time is up Brinkley.
+	[[Results->gameover]]](else:)[
+    (text-style:"buoy")[3 YEARS LATER...]
+    *Obtained $50,000 from goat surgeries*
+    You can improve your radio tower in Mexico for $40,000!
+    (if:$money >= 40000)[
+    [[Improve radio tower->improve radio tower last time]]]
+    [[Keep going->improve radio tower again]]
+    ]
+
+
+:: improve radio tower last time {"position":"825,1650","size":"100,100"}
+(set: $age to $age + 5)''AGE: $age''
+(set: $money to $money + 100000)'' MONEY: $$money''
+(if:$age is >= $maxAge)[Your  time is up Brinkley.
+	[[Results->gameover]]](else:)[
+    (text-style:"buoy")[5 YEARS LATER...]
+    *Obtained $100,000 from goat surgeries*
+    You can improve your radio tower in Mexico for $200,000!
+    (if:$money >= 200000)[
+    [[Improve radio tower->lawsuit]]]
+    [[Keep going->improve radio tower last time]]
+    ]
+
+
+:: keep going {"position":"825,1250","size":"100,100"}
+(set: $age to $age + 1)''AGE: $age''
+(set: $money to $money + 500)'' MONEY: $$money''
+(if:$age is >= $maxAge)[Your  time is up Brinkley.
+	[[Results->gameover]]](else:)[
+    (text-style:"buoy")[1 YEAR LATER...]
+    *Obtained $500 from goat surgeries*
+    You can improve your radio tower in Mexico for $1000!
+    (if:$money >= 1000)[
+    [[Improve radio tower->improve radio tower]]]
+    	[[Keep going->keep going]]
+    ]
+    
+    
+
+
+:: lawsuit {"position":"825,1800","size":"100,100"}
+(set: $age to $age + 5)''AGE: $age''
+(set: $money to -999999)'' MONEY: $$money''
+
+(text-colour:red)[YOU ARE WERE SUED DUE TO YOUR GOAT BALLS KILLING PEOPLE!!!]
+
+*Obtained $999,999 in debt*
+
+[[results->gameover]] 
+
+
+:: purchase {"position":"825,750","size":"100,100"}
+(set: $goatBalls to $goatBalls - 2)''AGE: $age''
+(set: $money to $money + 10)'' MONEY: $$money''
+(if:$age is >= 70)[Your  time is up Brinkley.
+	[[Results->gameover]]](else:)[
+*You put goat balls in a dude*
+"Hey! These are pretty nifty! Thanks Dr. Brinkley!" - Some dude
+*Obtained $10!*
+*Remaining goat balls: $goatBalls*
+(if:$goatBalls is > 0)[[[Do it again->purchase]]]
+[[Advertise->advertise]]
+]
+
+
+:: start {"position":"700,300","size":"100,100"}
+(set: $age to 20)''AGE: $age''
+(set: $money to 0)'' MONEY: $$money''
+Yo Mr. Brinkley! What are you gonna do today?
+
+
+[[Look at goat balls->balls]]
+[[Farm]]
+
+
+:: work hard {"position":"1250,625","size":"100,100"}
+''AGE: $age''(set: $age to $age + 4)
+'' MONEY: $$money''(set: $money to $money - 100000)
+(if:$age is >= 70)[Your  time is up Brinkley.
+	[[Results->gameover]]
+]
+(else:)[(text-style:"buoy")[4 YEARS LATER...]
+(text-colour:red)[*Failed to get degree*]
+Dang I'm sorry man. Looks like getting a medical degree is harder than it looks.
+
+[[Try again->work hard]] 
+[[Just buy it->purchase]] 
+]
+
+
